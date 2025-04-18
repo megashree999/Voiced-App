@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Transcriber Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="meg.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="particles" id="particles-js"></div>
+        
+        <header class="app-header">
+            <div class="logo-container">
+                <i class="fas fa-microphone-alt logo-icon"></i>
+                <h1 class="logo-text">Voice<span>Transcriber</span>Pro</h1>
+            </div>
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch">
+                <label for="theme-switch" class="theme-label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="theme-ball"></span>
+                </label>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="recorder-container">
+                <div class="visualizer" id="visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                
+                <button class="record-btn" id="recordBtn">
+                    <span class="record-circle"></span>
+                    <span class="pulse-ring"></span>
+                    <i class="fas fa-microphone"></i>
+                </button>
+                
+                <div class="controls">
+                    <button class="control-btn" id="copyBtn" title="Copy to clipboard">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <button class="control-btn" id="clearBtn" title="Clear text">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                    <button class="control-btn" id="downloadBtn" title="Download as text file">
+                        <i class="fas fa-download"></i>
+                    </button>
+                    <button class="control-btn" id="helpBtn" title="Help">
+                        <i class="fas fa-question"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-container">
+                <div class="language-selector">
+                    <label for="languageSelect">Language:</label>
+                    <select id="languageSelect" class="language-select">
+                        <option value="en-US">English (US)</option>
+                        <option value="en-GB">English (UK)</option>
+                        <option value="es-ES">Spanish</option>
+                        <option value="fr-FR">French</option>
+                        <option value="de-DE">German</option>
+                        <option value="it-IT">Italian</option>
+                        <option value="pt-BR">Portuguese</option>
+                        <option value="ru-RU">Russian</option>
+                        <option value="ja-JP">Japanese</option>
+                        <option value="zh-CN">Chinese</option>
+                        <option value="hi-IN">Hindi</option>
+                    </select>
+                </div>
+                
+                <div class="text-display" id="textDisplay" contenteditable="true">
+                    <p class="placeholder">Your transcribed text will appear here...</p>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-box">
+                        <i class="fas fa-clock"></i>
+                        <span id="timeStat">00:00:00</span>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-font"></i>
+                        <span id="wordsStat">0 words</span>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-chart-line"></i>
+                        <span id="accuracyStat">--% accuracy</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="notification" id="notification"></div>
+        
+        <div class="modal" id="helpModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>How to Use Voice Transcriber Pro</h2>
+                <div class="modal-body">
+                    <div class="tip">
+                        <i class="fas fa-microphone"></i>
+                        <h3>Recording</h3>
+                        <p>Click the microphone button to start recording. Click again to stop.</p>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-language"></i>
+                        <h3>Language Selection</h3>
+                        <p>Select your language from the dropdown menu before recording.</p>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-copy"></i>
+                        <h3>Copy & Save</h3>
+                        <p>Use the buttons below the microphone to copy, clear, or download your text.</p>
+                    </div>
+                    <div class="tip">
+                        <i class="fas fa-headset"></i>
+                        <h3>Best Results</h3>
+                        <p>Use a quiet environment and speak clearly for best accuracy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
